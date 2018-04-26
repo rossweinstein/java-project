@@ -8,4 +8,8 @@ node ('linux') {
     stage('Build') {
         sh 'ant -f build.xml -v'
     }
+
+    stage('Deploy') {
+        sh 'aws s3 cp /workspace/java-pipeline/dist/rectangle-4.jar s3://rw-assignment10/rectangle-2.jar'
+    }
 }
