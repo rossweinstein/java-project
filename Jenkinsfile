@@ -5,7 +5,7 @@ node ('linux') {
         sh 'ant -f test.xml -v'
         junit 'reports/result.xml'
     }
-    stage{"Build"} {
+    stage('Build') {
         sh 'ant -f build.xml -v'
     }
 }
