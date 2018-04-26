@@ -10,6 +10,6 @@ node ('linux') {
     }
 
     stage('Deploy') {
-        echo "$env.BUILD_ID"
+        sh 'aws s3 cp /workspace/dist/rectangle-'+${env.BUILD_ID}+'.jar s3://rw-assignment10/rectangle-'+${env.BUILD_ID}+'.jar'
     }
 }
