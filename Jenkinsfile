@@ -12,6 +12,6 @@ node ('linux') {
     } 
 
     stage('Deploy') {
-        sh 'aws s3 cp ${WORKSPACE}/dist/rectangle-${env.Build_ID}.jar s3://rw-assignment10/rectange-${env.Build_ID}.jar'
+        sh "aws s3 cp ${WORKSPACE}/dist/rectangle-${env.Build_ID}.jar s3://rw-assignment10/rectangle-${env.BUILD_ID}.jar"
     }
 }
